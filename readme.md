@@ -11,106 +11,106 @@ Please note that these are very simple scripts that don't implement error checki
 
 ## Usage
 
-	$ git clone https://github.com/kasparsd/php-7-debian.git
-	$ cd php-7-debian
-	$ ./build.sh
-	$ sudo ./install.sh
+    $ git clone https://github.com/kasparsd/php-7-debian.git
+    $ cd php-7-debian
+    $ ./build.sh
+    $ sudo ./install.sh
 
 The PHP-FPM can be operated using the `php7-fpm` init script:
 
-	Usage: /etc/init.d/php7-fpm {start|stop|status|restart|reload|force-reload}
+    Usage: /etc/init.d/php7-fpm {start|stop|status|restart|reload|force-reload}
 
 while the FPM socket is available at
 
-	127.0.0.1:9007
+    127.0.0.1:9007
 
 and PHP CLI:
 
-	$ /usr/local/php7/bin/php -v
-	PHP 7.0.13 (cli) (built: Jan  6 2016 01:17:03) ( NTS )
-	Copyright (c) 1997-2015 The PHP Group
-	Zend Engine v3.0.0, Copyright (c) 1998-2015 Zend Technologies
-	    with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2015, by Zend Technologies
+    $ /usr/local/php7/bin/php -v
+    PHP 7.0.13 (cli) (built: Jan  6 2016 01:17:03) ( NTS )
+    Copyright (c) 1997-2015 The PHP Group
+    Zend Engine v3.0.0, Copyright (c) 1998-2015 Zend Technologies
+        with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2015, by Zend Technologies
 
 
 ## Configuration files
 
 All PHP configuration files are stored under `/usr/local/php7`:
 
-	/usr/local/php7/lib/php.ini
-	/usr/local/php7/etc/php-fpm.conf
-	/usr/local/php7/etc/php-fpm.d/www.conf
-	/usr/local/php7/etc/conf.d/modules.ini
+    /usr/local/php7/lib/php.ini
+    /usr/local/php7/etc/php-fpm.conf
+    /usr/local/php7/etc/php-fpm.d/www.conf
+    /usr/local/php7/etc/conf.d/modules.ini
 
 while the Debian init script is added to:
 
-	/etc/init.d/php7-fpm
+    /etc/init.d/php7-fpm
 
 
 ## Extensions
 
 Note that most of the third-party PHP extensions are [not yet compatible with PHP 7](https://github.com/gophp7/gophp7-ext/wiki/extensions-catalog) and [GoPHP7-ext](http://gophp7.org/) (also on [GitHub](https://github.com/gophp7/gophp7-ext)) is a project to help do that. Here is a list of PHP modules that are enabled by default in this build:
 
-	$ /usr/local/php7/bin/php -m
-	[PHP Modules]
-	bcmath
-	bz2
-	calendar
-	Core
-	ctype
-	curl
-	date
-	dba
-	dom
-	exif
-	fileinfo
-	filter
-	ftp
-	gd
-	gettext
-	hash
-	iconv
-	intl
-	json
-	libxml
-	mbstring
-	mcrypt
-	mhash
-	mysqli
-	mysqlnd
-	openssl
-	pcntl
-	pcre
-	PDO
-	pdo_mysql
-	pdo_sqlite
-	Phar
-	posix
-	pspell
-	readline
-	Reflection
-	session
-	shmop
-	SimpleXML
-	soap
-	sockets
-	SPL
-	sqlite3
-	standard
-	sysvmsg
-	sysvsem
-	sysvshm
-	tokenizer
-	wddx
-	xml
-	xmlreader
-	xmlwriter
-	Zend OPcache
-	zip
-	zlib
+    $ /usr/local/php7/bin/php -m
+    [PHP Modules]
+    bcmath
+    bz2
+    calendar
+    Core
+    ctype
+    curl
+    date
+    dba
+    dom
+    exif
+    fileinfo
+    filter
+    ftp
+    gd
+    gettext
+    hash
+    iconv
+    intl
+    json
+    libxml
+    mbstring
+    mcrypt
+    mhash
+    mysqli
+    mysqlnd
+    openssl
+    pcntl
+    pcre
+    PDO
+    pdo_mysql
+    pdo_sqlite
+    Phar
+    posix
+    pspell
+    readline
+    Reflection
+    session
+    shmop
+    SimpleXML
+    soap
+    sockets
+    SPL
+    sqlite3
+    standard
+    sysvmsg
+    sysvsem
+    sysvshm
+    tokenizer
+    wddx
+    xml
+    xmlreader
+    xmlwriter
+    Zend OPcache
+    zip
+    zlib
 
-	[Zend Modules]
-	Zend OPcache
+    [Zend Modules]
+    Zend OPcache
 
 
 ## Installing Extensions
@@ -119,15 +119,21 @@ Please note that you need to restart `php7-fpm` to activate the extension.
 
 ### Install the Memcached Extension
 
-	$ ./php-7-debian/extensions
-	$ ./memcached-build.sh
-	$ ./memcached-install.sh
+    $ cd php-7-debian/extensions
+    $ ./memcached-build.sh
+    $ ./memcached-install.sh
 
 ### Install the Imagick Extension
 
-	$ cd php-7-debian/extensions
-	$ ./imagick-build.sh
-	$ ./imagick-install.sh
+    $ cd php-7-debian/extensions
+    $ ./imagick-build.sh
+    $ ./imagick-install.sh
+
+### Install the Redis Extension
+
+    $ cd php-7-debian/extensions
+    $ ./redis-build.sh
+    $ ./redis-install.sh
 
 
 ## Credits
