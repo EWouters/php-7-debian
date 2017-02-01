@@ -18,4 +18,9 @@ cp conf/php7-fpm.init /etc/init.d/php7-fpm
 chmod +x /etc/init.d/php7-fpm
 update-rc.d php7-fpm defaults
 
+cp conf/php-fpm.service /etc/systemd/system/php-fpm.service
+cp conf/php7-fpm-checkconf /usr/local/lib/php7-fpm-checkconf
+
+sudo systemctl enable php-fpm
+
 service php7-fpm start

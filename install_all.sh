@@ -1,7 +1,5 @@
 #!/bin/bash
 
-git clone https://github.com/EWouters/php-7-debian.git
-cd php-7-debian
 ./build.sh /usr/local/src
 sudo ./install.sh
 
