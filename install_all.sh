@@ -3,13 +3,11 @@
 ./build.sh /usr/local/src
 sudo ./install.sh
 
-cd php-7-debian/extensions
-./memcached-build.sh /usr/local/src
-./memcached-install.sh
+./extensions/memcached-build.sh /usr/local/src
+sudo ./extensions/memcached-install.sh
 
-cd php-7-debian/extensions
-./imagick-build.sh /usr/local/src
-./imagick-install.sh
+./extensions/imagick-build.sh /usr/local/src
+sudo ./extensions/imagick-install.sh
 
 /etc/init.d/php7-fpm restart
 sudo systemctl enable php-fpm
