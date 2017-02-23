@@ -1,12 +1,12 @@
 #!/bin/bash
 
-./build.sh /usr/local/src
+./build.sh
 sudo ./install.sh
 
-./extensions/memcached-build.sh /usr/local/src
+./extensions/memcached-build.sh
 sudo ./extensions/memcached-install.sh
 
-./extensions/imagick-build.sh /usr/local/src
+./extensions/imagick-build.sh
 sudo ./extensions/imagick-install.sh
 
 /etc/init.d/php7-fpm restart
