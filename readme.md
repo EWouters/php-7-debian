@@ -8,6 +8,8 @@ These are a set of bash scripts for building and running PHP 7 (CLI and FPM) on 
 
 Please note that these are very simple scripts that don't implement error checking or process validation.
 
+![Building PHP 7 on Orange Pi Zero (ARM)](https://kaspars.net/wp-content/uploads/2017/02/orange-pi-zero-php7-build.png)
+
 
 ## Usage
 
@@ -119,9 +121,9 @@ Please note that you need to restart `php7-fpm` to activate the extension.
 
 ### Install the Memcached Extension
 
-    $ cd php-7-debian/extensions
-    $ ./memcached-build.sh
-    $ ./memcached-install.sh
+	$ cd php-7-debian/extensions
+	$ ./memcached-build.sh
+	$ ./memcached-install.sh
 
 ### Install the Imagick Extension
 
